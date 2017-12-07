@@ -1,0 +1,3 @@
+pdftotext [pdfsource.pdf] [txtoutput.txt]
+
+Project to extract metadata from copies of the Alestle
