@@ -1,5 +1,6 @@
 class alestle():
     def __init__(self, t, u, a, p):
+        #Title := "The Alestle, <Month> <Day>, <Year>"
         self.title = t
         self.url = u
         self.author = "Southern Illinois University Edwardsville"
