@@ -1,4 +1,4 @@
-class alestle():
+class Alestle():
     def __init__(self, t, u, a, p):
         #Title := "The Alestle, <Month> <Day>, <Year>"
         self.title = t
@@ -15,6 +15,6 @@ class alestle():
     def toString():
         return ""
 
-    def getInfo(inString):
+    def fillClass(inString):
         #Fils in the variables for the alestle class, given a string containing the entire newspaper.
         
