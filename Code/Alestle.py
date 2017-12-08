@@ -9,7 +9,7 @@ class Alestle():
         self.publisher = "Southern Illinois University Edwardsville"
         self.city = "Edwardsville"
         self.docType = "book"
-        self.abstract = ""
+        self.abstract = "Vol.99,No.99"
         self.pubdate = "January1,1900"
         fillClass()
 
