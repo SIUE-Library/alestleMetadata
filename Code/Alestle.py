@@ -25,7 +25,7 @@ class Alestle():
         dateMatch = re.search("(January|February|March|April|May|June|July|August|September|October|November|December)(\d|\d\d,)(\d\d\d\d)",testString)
         if(dateMatch)
             self.pubdate = dateMatch.group(0)
-        issueMatch = re.search("",testString)
+        issueMatch = re.search("Vol\.(\d|\d\d),No\.(\d\d|\d)",testString)
         if(issueMatch)
             self.abstract = issueMatch.group(0)
         
