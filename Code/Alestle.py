@@ -1,7 +1,8 @@
+import datetime
 import convertToText.py
 import re
 class Alestle():
-    def __init__(fileurl):
+    def __init__(self, fileURL):
         #Title := "The Alestle, <Month> <Day>, <Year>"
         self.title = ""
         self.url = fileURL
@@ -15,10 +16,12 @@ class Alestle():
 
     #TODO: return the object with its comma delineated values, including needed default values
     #for the columns not included here.  A collection alestle.toString()'s should be a valid csv
-    def toString():
-        return ""
+    def toString(self):
+        d = datetime.datetime.strptime(self.pubdate, "%B%d,%Y").strftime("%B %d, %Y")
+        t = "The Alestle, "+d
+        return t+","+self.url+","+self.url+",,,Southern Illinois University Edwardsville,,,,,,TRUE,,,,,,,FALSE,,,,,,,FALSE,,,,,,,FALSE,,,,,,,,Book,,"+d+","
 
-    def fillClass():
+    def fillClass(self):
         #Fils in the variables for the alestle class, given a string containing the entire newspaper.
         testString = convertToText.getPDFContents(self.url)
         testString = testString.replace(" ", "")
