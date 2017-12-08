@@ -1,5 +1,4 @@
 import datetime
-import convertToText.py
 import re
 class Alestle():
     def __init__(self, fileURL):
@@ -12,7 +11,7 @@ class Alestle():
         self.docType = "book"
         self.abstract = "Vol.99,No.99"
         self.pubdate = "January1,1900"
-        fillClass()
+        self.fillClass()
 
     #TODO: return the object with its comma delineated values, including needed default values
     #for the columns not included here.  A collection alestle.toString()'s should be a valid csv
@@ -23,12 +22,13 @@ class Alestle():
 
     def fillClass(self):
         #Fils in the variables for the alestle class, given a string containing the entire newspaper.
-        testString = convertToText.getPDFContents(self.url)
+        testString = open(self.url, "r")
+        testString = testString.read()
         testString = testString.replace(" ", "")
         dateMatch = re.search("(January|February|March|April|May|June|July|August|September|October|November|December)(\d|\d\d,)(\d\d\d\d)",testString)
-        if(dateMatch)
+        if(dateMatch):
             self.pubdate = dateMatch.group(0)
         issueMatch = re.search("Vol\.(\d|\d\d),No\.(\d\d|\d)",testString)
-        if(issueMatch)
+        if(issueMatch):
             self.abstract = issueMatch.group(0)
         
