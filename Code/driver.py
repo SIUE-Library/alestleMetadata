@@ -2,7 +2,21 @@ import Alestle
 import os
 
 testObject =  Alestle.Alestle("../Alestle/text/Ales_2002_06_26.txt")
-print(testObject.toString())
 
+list = []
 for filename in os.listdir("../Alestle/text"):
-    print(Alestle.Alestle("../Alestle/text/"+filename).toString())
+    tmp = (Alestle.Alestle("../Alestle/text/"+filename).toString())
+    print(tmp)
+    list.append(tmp)
+
+print(len(list))
+
+wrong = 0
+total = 0
+
+for l in list:
+    if "Error" in l:
+        wrong += 1
+    total += 1
+
+print("We succeeded with "+str(total-wrong)+" out of "+str(total))
