@@ -9,8 +9,8 @@ class Alestle():
         self.publisher = "Southern Illinois University Edwardsville"
         self.city = "Edwardsville"
         self.docType = "book"
-        self.abstract = "Vol.99,No.99"
-        self.pubdate = "January1,1900"
+        self.abstract = ""
+        self.pubdate = ""
 
         self.fillClass()
 
@@ -19,9 +19,9 @@ class Alestle():
     def toString(self):
         t=""
         d=""
-        if self.pubdate == "January1,1900":
+        if self.pubdate == "":
             t += "Error: Date is wrong at:\n"
-        if self.abstract == "Vol.99,No.99":
+        if self.abstract == "":
             t += "Error: Edition is wrong at:\n"
         try:
             d = datetime.datetime.strptime(self.pubdate, "%B%d,%Y").strftime("%B %d, %Y")
@@ -47,4 +47,5 @@ class Alestle():
         issueMatch = re.search("Vol(,|\.)(\d\d|\d)(,|\.)No(,|\.)(\d\d|\d)",testString)
         if(issueMatch):
             self.abstract = issueMatch.group(0)
+            self.abstract = self.abstract.replace(",", " ")
             print("UPDATED")
