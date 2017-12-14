@@ -24,8 +24,8 @@ class Alestle():
         if self.abstract == "Vol.99,No.99":
             t += "Error: Edition is wrong at:\n"
         try:
-            d = datetime.datetime.strptime(self.pubdate, "%B%d,%Y").strftime("%B %d\\, %Y")
-            t += "The Alestle, "+d
+            d = datetime.datetime.strptime(self.pubdate, "%B%d,%Y").strftime("\"%B %d, %Y\"")
+            t += "\"The Alestle, "+d+"\""
             
         except:
             t += "Error AT: "+self.url+"\n"
