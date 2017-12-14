@@ -9,8 +9,8 @@ class Alestle():
         self.publisher = "Southern Illinois University Edwardsville"
         self.city = "Edwardsville"
         self.docType = "book"
-        self.abstract = "Vol.99\\,No.99"
-        self.pubdate = "January1\\,1900"
+        self.abstract = "Vol.99,No.99"
+        self.pubdate = "January1,1900"
 
         self.fillClass()
 
@@ -25,12 +25,12 @@ class Alestle():
             t += "Error: Edition is wrong at:\n"
         try:
             d = datetime.datetime.strptime(self.pubdate, "%B%d,%Y").strftime("%B %d, %Y")
-            t += "\"The Alestle, "+d+"\""
+            t += "The Alestle, "+d
             
         except:
             t += "Error AT: "+self.url+"\n"
 
-        return t+","+self.url+","+self.url+",,"+self.abstract+",Southern Illinois University Edwardsville,,,,,,TRUE,,,,,,,FALSE,,,,,,,FALSE,,,,,,,FALSE,,,,,,,,Book,,\""+d+"\",\n"
+        return "\""+t+"\","+self.url+","+self.url+",,"+self.abstract+",Southern Illinois University Edwardsville,,,,,,TRUE,,,,,,,FALSE,,,,,,,FALSE,,,,,,,FALSE,,,,,,,,Book,,\""+d+"\",\n"
 
        
     def fillClass(self):
@@ -47,4 +47,4 @@ class Alestle():
         issueMatch = re.search("Vol(,|\.)(\d\d|\d)(,|\.)No(,|\.)(\d\d|\d)",testString)
         if(issueMatch):
             self.abstract = issueMatch.group(0)
-        
+            print("UPDATED")
