@@ -1,8 +1,6 @@
 import Alestle
 import os
 
-testObject =  Alestle.Alestle("../Alestle/text/Ales_2002_06_26.txt")
-
 list = []
 for filename in os.listdir("../Alestle/text"):
     tmp = (Alestle.Alestle("../Alestle/text/"+filename).toString())

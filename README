@@ -1,3 +1,9 @@
 pdftotext [pdfsource.pdf] [txtoutput.txt]
 
 Project to extract metadata from copies of the Alestle
+
+Run convertToText to convert to contents of the pdf's to txt's
+Run driver to print the contents of the txt's in a csv format
+
+Ran on the entire collection it has a success rate of approx 60%
+Ran on the Alestle's only from 1996 is has a success rate of approx 90%
