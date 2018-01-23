@@ -24,7 +24,7 @@ class Alestle():
         if self.abstract == "":
             t += "Error: Edition is wrong at:\n"
         try:
-            d = datetime.datetime.strptime(self.pubdate, "%B%d,%Y").strftime("%B %d, %Y")
+            d = datetime.datetime.strptime(self.pubdate, "%B%d,%Y").strftime("%Y-%m-%d")
             t += "The Alestle, "+d
             
         except:
