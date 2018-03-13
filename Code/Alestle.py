@@ -30,8 +30,8 @@ class Alestle():
         except:
             t += "Error AT: "+self.url+"\n"
 
-        return "\""+t+"\",https://s3-us-west-2.amazonaws.com/alestle/"+self.url[16:-3]+"pdf,https://s3-us-west-2.amazonaws.com/alestle/"+self.url[16:-3]+"pdf,,"+self.abstract+",Southern Illinois University Edwardsville,,,,,,TRUE,,,,,,,FALSE,,,,,,,FALSE,,,,,,,FALSE,,,,,,,,Book,,\""+d+"\",\n"
-
+        url = "146.163.15x.xxx/alestle/"+self.url
+        return self.title+","+self.url+",,,Southern Illinois University Edwardsville,,,,,,FALSE,,,,,,,FALSE,,,,,,,FALSE,,,,,,,FALSE,,,,,,"+self.date+","
        
     def fillClass(self):
         #Fils in the variables for the alestle class, given a string containing the entire newspaper.
