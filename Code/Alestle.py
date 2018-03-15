@@ -26,12 +26,14 @@ class Alestle():
         try:
             d = datetime.datetime.strptime(self.pubdate, "%B%d,%Y").strftime("%Y-%m-%d")
             t += "The Alestle, "+d
-            
+            self.title = "The Alestle, "+d
+            self.pubdate = d
         except:
             t += "Error AT: "+self.url+"\n"
+            print("EVERYTHING IS ON FIRE")
 
-        url = "146.163.15x.xxx/alestle/"+self.url
-        return self.title+","+self.url+",,,Southern Illinois University Edwardsville,,,,,,FALSE,,,,,,,FALSE,,,,,,,FALSE,,,,,,,FALSE,,,,,,"+self.date+","
+        url = "146.163.156.36/alestle/"+self.url[16:-3]+"pdf"
+        return self.title+"|"+url+"||"+self.abstract+"|Southern Illinois University Edwardsville||||||FALSE|||||||FALSE|||||||FALSE|||||||FALSE||||||"+self.pubdate+"|\n"
        
     def fillClass(self):
         #Fils in the variables for the alestle class, given a string containing the entire newspaper.
